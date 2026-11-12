@@ -88,6 +88,18 @@ section.bloc.premier{border-top:0;padding-top:0}
 .cabane .photo{height:250px;width:calc(100% - 8px)}
 .minis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:8px}
 .minis img{height:80px;width:100%;object-fit:cover;border:2px solid var(--sapin);border-radius:12px}
+.cabane img,.galerie img{cursor:zoom-in}
+.visionneuse{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0;overflow:hidden}
+.visionneuse::backdrop{background:rgba(47,34,26,.92)}
+.visionneuse .scene{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:56px 12px}
+.visionneuse img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:14px;border:3px solid var(--sable)}
+.visionneuse button{position:absolute;width:46px;height:46px;border-radius:50%;border:0;background:var(--sable);color:var(--sapin);font:900 22px/1 Archivo,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.visionneuse button:hover{background:var(--jaune)}
+.visionneuse button:focus-visible{outline:3px solid var(--jaune);outline-offset:3px}
+.visionneuse .fermer{top:10px;right:10px}
+.visionneuse .prec{left:10px;top:50%;transform:translateY(-50%)}
+.visionneuse .suiv{right:10px;top:50%;transform:translateY(-50%)}
+.visionneuse .compte{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:var(--sable);font-weight:700;font-size:14px}
 .cabane ul{padding-left:20px;font-size:15px;line-height:1.7}
 .cabane .acc{font-weight:500}
 .sous{border-top:2px solid var(--sapin);padding-top:14px;font-weight:700;color:var(--sapin);font-size:15px}
@@ -244,15 +256,15 @@ footer a{text-decoration:underline}
       <p class="lead">Deux cabanes au milieu des vignes et de la forêt&nbsp;: ils pourront choisir celle qu'ils préfèrent au moment de réserver&nbsp;!</p>
       <div class="cabanes">
         <article class="cabane">
-          <img class="photo ombre-p" loading="lazy" src="img/cabane-interieur-bois.jpg" alt="L'intérieur tout en bois de la Cabane de l'explorateur, avec sa mezzanine">
-          <div class="minis"><img loading="lazy" src="img/cabane-drone.jpg" alt="La cabane vue du ciel"><img loading="lazy" src="img/cabane-lit.jpg" alt="Le lit en mezzanine sous les fenêtres de toit"><img loading="lazy" src="img/cabane-salle-de-bain.jpg" alt="La salle de bain de la cabane"></div>
+          <img class="photo ombre-p" loading="lazy" src="img/cabane-drone.jpg" alt="La Cabane de l'explorateur vue du ciel, au milieu des arbres">
+          <div class="minis"><img loading="lazy" src="img/cabane-interieur-bois.jpg" alt="L'intérieur tout en bois de la cabane, avec sa mezzanine"><img loading="lazy" src="img/cabane-lit.jpg" alt="Le lit en mezzanine sous les fenêtres de toit"><img loading="lazy" src="img/cabane-salle-de-bain.jpg" alt="La salle de bain de la cabane"></div>
           <h3>La Cabane de l'explorateur</h3>
           <p class="acc">Une cabane tout en bois, sous une charpente qu'on reste longtemps à regarder.</p>
           <ul><li>Un lit double en mezzanine, sous les fenêtres de toit, pour s'endormir la tête dans les étoiles</li><li>Une banquette devant la baie vitrée, face aux arbres</li><li>Un petit poêle à bois pour les soirées d'hiver</li><li>Kitchenette, coin bureau et salle de bain</li></ul>
         </article>
         <article class="cabane">
-          <img class="photo ombre-j" loading="lazy" src="img/tiny-invisible-exterieur.jpg" alt="La Tiny House invisible et sa terrasse en bois">
-          <div class="minis"><img loading="lazy" src="img/tiny-invisible-miroir.jpg" alt="La façade miroir de la tiny house, qui reflète la forêt"><img loading="lazy" src="img/tiny-invisible-banquette.jpg" alt="La banquette devant la fenêtre"><img loading="lazy" src="img/tiny-invisible-facade.jpg" alt="La façade en bois de la tiny house"></div>
+          <img class="photo ombre-j" loading="lazy" src="img/tiny-invisible-miroir.jpg" alt="La façade miroir de la Tiny House invisible, qui reflète la forêt">
+          <div class="minis"><img loading="lazy" src="img/tiny-invisible-exterieur.jpg" alt="La tiny house et sa terrasse en bois"><img loading="lazy" src="img/tiny-invisible-banquette.jpg" alt="La banquette devant la fenêtre"><img loading="lazy" src="img/tiny-invisible-facade.jpg" alt="La façade en bois de la tiny house"></div>
           <h3>La Tiny House invisible</h3>
           <p class="acc">Une tiny house aux façades miroir, qui disparaît au milieu de la forêt.</p>
           <ul><li>Une vue dégagée sur les vignes</li><li>Un lit double en mezzanine</li><li>Une banquette devant la fenêtre, pour lire ou ne rien faire</li><li>Cuisine et salle de bain</li></ul>
@@ -387,6 +399,53 @@ if ("IntersectionObserver" in window) {
   new IntersectionObserver(function (e) { barre.classList.toggle("visible", !e[0].isIntersecting); }, { threshold: 0 })
     .observe(document.getElementById("carte-achat"));
 }
+
+// Agrandir les photos des cabanes, de la grange et du parc au clic.
+(function () {
+  var boite = document.createElement("dialog");
+  boite.className = "visionneuse";
+  boite.setAttribute("aria-label", "Photo agrandie");
+  boite.innerHTML = '<div class="scene"><img alt=""></div>' +
+    '<button type="button" class="fermer" aria-label="Fermer">×</button>' +
+    '<button type="button" class="prec" aria-label="Photo précédente">‹</button>' +
+    '<button type="button" class="suiv" aria-label="Photo suivante">›</button>' +
+    '<p class="compte"></p>';
+  document.body.appendChild(boite);
+  if (!boite.showModal) return;
+  var grande = boite.querySelector("img"), compte = boite.querySelector(".compte");
+  var serie = [], rang = 0;
+  function montrer(i) {
+    rang = (i + serie.length) % serie.length;
+    grande.src = serie[rang].currentSrc || serie[rang].src;
+    grande.alt = serie[rang].alt;
+    compte.textContent = (rang + 1) + " / " + serie.length;
+  }
+  document.querySelectorAll(".cabane, .galerie").forEach(function (groupe) {
+    var photos = Array.prototype.slice.call(groupe.querySelectorAll("img"));
+    photos.forEach(function (img, i) {
+      img.tabIndex = 0;
+      img.setAttribute("role", "button");
+      function ouvrir() { serie = photos; montrer(i); boite.showModal(); }
+      img.addEventListener("click", ouvrir);
+      img.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); ouvrir(); } });
+    });
+  });
+  boite.querySelector(".fermer").addEventListener("click", function () { boite.close(); });
+  boite.querySelector(".prec").addEventListener("click", function () { montrer(rang - 1); });
+  boite.querySelector(".suiv").addEventListener("click", function () { montrer(rang + 1); });
+  boite.addEventListener("click", function (e) { if (e.target === boite || e.target.className === "scene") boite.close(); });
+  boite.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") montrer(rang - 1);
+    if (e.key === "ArrowRight") montrer(rang + 1);
+  });
+  var x0 = null;
+  boite.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  boite.addEventListener("touchend", function (e) {
+    if (x0 === null) return;
+    var d = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(d) > 40) montrer(rang + (d < 0 ? 1 : -1));
+  });
+})();
 </script>
 </body>
 </html>
