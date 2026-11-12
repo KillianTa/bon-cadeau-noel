@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merci ! Votre bon cadeau · La Maison des Créateurs</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<style>
+:root{--sable:#F5E1C8;--creme:#FFFAF4;--brun:#2F221A;--sapin:#354E31;--noel:#D1362A;--jaune:#FBB938}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--sable);color:var(--brun);font-family:"DM Sans",system-ui,sans-serif;font-size:17px;line-height:1.55}
+.wrap{max-width:880px;margin:0 auto;padding:40px 20px 56px;display:flex;flex-direction:column;gap:24px}
+.etiquette{align-self:flex-start;background:var(--jaune);color:var(--sapin);font-weight:800;font-size:14px;border-radius:8px;padding:6px 12px}
+h1{font-family:Archivo,sans-serif;font-weight:900;text-transform:uppercase;color:var(--sapin);font-size:32px;line-height:1.05;text-wrap:balance}
+.lead{font-size:19px;font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--noel);color:var(--creme);font-family:Archivo,sans-serif;font-weight:900;font-size:16px;letter-spacing:.03em;text-transform:uppercase;border:0;border-radius:999px;padding:16px 30px;cursor:pointer}
+.btn:hover{background:#b92d22}
+.btn:focus-visible,input:focus-visible{outline:3px solid var(--jaune);outline-offset:3px}
+.actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.actions small{font-size:14px;font-weight:500}
+.cadre{overflow-x:auto;padding:4px 10px 14px 0}
+ol{padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.fort{font-weight:800;color:var(--sapin)}
+a{color:var(--sapin);font-weight:700}
+
+/* Le bon : format A5 paysage */
+.bon{width:794px;height:560px;background:var(--creme);border:1px solid #E8D9C4;display:flex;box-shadow:8px 8px 0 var(--jaune);border-radius:4px;flex-shrink:0}
+.bon .gauche{flex:1 1 auto;min-width:0;padding:40px 40px 32px 44px;display:flex;flex-direction:column;justify-content:space-between}
+.bon .haut{display:flex;flex-direction:column;gap:14px}
+.bon .tag{display:flex;align-items:center;gap:10px}
+.bon .tag span:first-child{padding:6px 14px;border-radius:999px;background:var(--sable);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.bon .tag span:last-child{width:8px;height:8px;border-radius:50%;background:var(--noel)}
+.bon h2{font-family:"Bricolage Grotesque","DM Sans",sans-serif;font-weight:800;font-size:50px;line-height:1.02;letter-spacing:-.015em;color:var(--sapin);margin-top:4px}
+.bon .haut p{font-size:16px;line-height:1.5;max-width:430px}
+.bon .champs{display:flex;flex-direction:column;gap:14px}
+.bon .champ{display:flex;align-items:flex-end;gap:12px;height:34px}
+.bon .champ label{flex:0 0 auto;font-size:14px;font-weight:700}
+.bon .champ input{flex:1 1 auto;min-width:0;border:0;border-bottom:1px solid #B9A68C;background:transparent;font:500 16px "DM Sans",sans-serif;color:var(--brun);padding:2px 4px}
+.bon .champ output{flex:1 1 auto;border-bottom:1px solid #B9A68C;font-size:16px;font-weight:500;padding:2px 4px}
+.bon .contact{display:flex;flex-direction:column;gap:3px;padding-top:14px;border-top:1px solid #E8D9C4}
+.bon .contact .t{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sapin)}
+.bon .contact span{font-size:15px;line-height:1.45}
+.bon .contact .ref{font-size:11px;color:#6b5a4c;padding-top:4px}
+.bon .droite{flex:0 0 246px;background:var(--sable);border-left:2px dashed #C9AE8C;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:32px 22px}
+.bon .droite img{width:172px;height:auto;mix-blend-mode:multiply}
+.bon .chiffre{font-family:"Bricolage Grotesque","DM Sans",sans-serif;font-weight:800;font-size:112px;line-height:1;color:var(--sapin);margin-top:18px}
+.bon .unite{font-size:18px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.bon .ou{font-size:14px}
+
+@media (min-width:760px){h1{font-size:44px}}
+@page{size:A5 landscape;margin:0}
+@media print{
+  body{background:#fff}
+  .wrap{padding:0;max-width:none;gap:0}
+  .wrap>*:not(.cadre){display:none}
+  .cadre{overflow:visible;padding:0}
+  .bon{box-shadow:none;border:0;border-radius:0;width:210mm;height:148mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .bon .champ input::placeholder{color:transparent}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="etiquette">Paiement confirmé</span>
+  <h1>Merci&nbsp;! Votre bon cadeau est prêt.</h1>
+  <p class="lead">Il ne reste qu'à l'imprimer et à le glisser sous le sapin. Vous pouvez écrire les prénoms directement sur le bon avant de l'imprimer, ou les ajouter à la main.</p>
+
+  <div class="actions">
+    <button class="btn" type="button" onclick="window.print()">Imprimer ou enregistrer en PDF</button>
+    <small>Dans la fenêtre d'impression, choisissez «&nbsp;Enregistrer au format PDF&nbsp;» pour le garder ou l'envoyer.</small>
+  </div>
+
+  <div class="cadre">
+    <article class="bon" id="bon">
+      <div class="gauche">
+        <div class="haut">
+          <div class="tag"><span>Bon cadeau</span><span></span></div>
+          <h2><span id="titre">Deux nuits</span><br>en cabane</h2>
+          <p>Ce bon vous offre <span id="phrase">deux nuits</span> dans une cabane à la Maison des Créateurs, pour une ou deux personnes.</p>
+        </div>
+        <div class="champs">
+          <div class="champ"><label for="a">Offert à</label><input id="a" type="text" placeholder="Écrivez un prénom" autocomplete="off"></div>
+          <div class="champ"><label for="de">De la part de</label><input id="de" type="text" placeholder="Écrivez votre prénom" autocomplete="off"></div>
+          <div class="champ"><label>Valable jusqu'au</label><output id="validite"></output></div>
+        </div>
+        <div class="contact">
+          <span class="t">Pour réserver</span>
+          <span><b>Laëtitia Talin</b></span>
+          <span>laetitia@maisondescreateurs.fr · +33 6 37 83 25 17</span>
+          <span class="ref" id="ref"></span>
+        </div>
+      </div>
+      <div class="droite">
+        <img src="img/logo-maison-des-createurs.png" alt="La Maison des Créateurs">
+        <span class="chiffre" id="chiffre">2</span>
+        <span class="unite" id="unite">nuits</span>
+        <span class="ou">en cabane</span>
+      </div>
+    </article>
+  </div>
+
+  <h1 style="font-size:26px">Et ensuite&nbsp;?</h1>
+  <ol>
+    <li><span class="fort">Vous offrez le bon.</span> Imprimé, ou envoyé en PDF.</li>
+    <li><span class="fort">La personne choisit ses dates</span> quand elle veut pendant un an, dans la Cabane de l'explorateur ou la Tiny House invisible.</li>
+    <li><span class="fort">Elle écrit à Laëtitia</span> avec les coordonnées indiquées sur le bon, et on réserve son séjour ensemble.</li>
+  </ol>
+  <p>Vous recevez aussi le reçu de votre paiement par mail. Une question&nbsp;? Écrivez-nous à <a href="mailto:laetitia@maisondescreateurs.fr">laetitia@maisondescreateurs.fr</a>.</p>
+</div>
+
+<script>
+var q = new URLSearchParams(location.search);
+var n = ["1", "2", "3"].indexOf(q.get("n")) >= 0 ? q.get("n") : "2";
+var mots = { "1": ["Une nuit", "une nuit", "nuit"], "2": ["Deux nuits", "deux nuits", "nuits"], "3": ["Trois nuits", "trois nuits", "nuits"] }[n];
+document.getElementById("titre").textContent = mots[0];
+document.getElementById("phrase").textContent = mots[1];
+document.getElementById("chiffre").textContent = n;
+document.getElementById("unite").textContent = mots[2];
+document.title = "Bon cadeau · " + mots[0] + " en cabane · La Maison des Créateurs";
+var d = new Date(); d.setFullYear(d.getFullYear() + 1);
+document.getElementById("validite").textContent = d.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+var ref = (q.get("ref") || "").replace(/[^A-Za-z0-9_]/g, "");
+if (ref) document.getElementById("ref").textContent = "Référence du paiement : " + ref.slice(-12).toUpperCase();
+</script>
+</body>
+</html>
