@@ -368,7 +368,11 @@ footer a{text-decoration:underline}
 
 <script>
 // Liens de paiement Stripe, un par formule (à renseigner avant la mise en ligne).
-var LIENS = { 1: "", 2: "", 3: "" };
+var LIENS = {
+  1: "https://buy.stripe.com/28EdR22iWc5zd0Y5Q32Ji08",
+  2: "https://buy.stripe.com/28E14gbTw7Pj3qodiv2Ji09",
+  3: "https://buy.stripe.com/bJe28k0aO5Hb8KIfqD2Ji0a"
+};
 var bouton = document.getElementById("btn-achat");
 function maj() {
   var n = document.querySelector('input[name="nuits"]:checked').value;
