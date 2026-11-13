@@ -88,6 +88,9 @@ section.bloc.premier{border-top:0;padding-top:0}
 .cabane .photo{height:250px;width:calc(100% - 8px)}
 .minis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:8px}
 .minis img{height:80px;width:100%;object-fit:cover;border:2px solid var(--sapin);border-radius:12px}
+.lien-avis{color:inherit;font-weight:inherit;text-decoration:underline;text-underline-offset:3px}
+.lien-avis:hover{color:var(--noel)}
+.lien-avis:focus-visible{outline:3px solid var(--jaune);outline-offset:3px}
 .cabane img,.galerie img{cursor:zoom-in}
 .visionneuse{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0;overflow:hidden}
 .visionneuse::backdrop{background:rgba(47,34,26,.92)}
@@ -217,7 +220,7 @@ footer a{text-decoration:underline}
       <p class="lead">Faites-leur le plaisir d'un cadeau qu'ils ne s'achèteront jamais&nbsp;: un séjour pour souffler et ralentir au milieu des vignes.</p>
       <div class="appel">
         <a class="btn" href="#offrir">Offrir un bon cadeau</a>
-        <span class="note"><span class="etoiles" aria-hidden="true">★★★★★</span>5/5 sur Google · 117 avis</span>
+        <span class="note"><span class="etoiles" aria-hidden="true">★★★★★</span>5/5 sur Google · <a class="lien-avis" href="https://www.google.com/maps/place/La+Maison+des+Cr%C3%A9ateurs+:+Location+Chalets+-+S%C3%A9minaires+-+Coworking/@45.4424657,-0.3440376,17z/data=!4m11!3m10!1s0x480043b503c42f37:0x4124b92d69d85afe!5m2!4m1!1i2!8m2!3d45.4424657!4d-0.3440376!9m1!1b1!16s%2Fg%2F11gyc8krnd?hl=fr" target="_blank" rel="noopener">117 avis</a></span>
       </div>
     </div>
     <div class="hero-photos">
@@ -313,7 +316,7 @@ footer a{text-decoration:underline}
 
     <section class="bloc">
       <h2>Ils sont venus souffler ici</h2>
-      <p class="noteg"><b>5/5</b><span class="etoiles" aria-hidden="true">★★★★★</span><span>117 avis Google</span></p>
+      <p class="noteg"><b>5/5</b><span class="etoiles" aria-hidden="true">★★★★★</span><span><a class="lien-avis" href="https://www.google.com/maps/place/La+Maison+des+Cr%C3%A9ateurs+:+Location+Chalets+-+S%C3%A9minaires+-+Coworking/@45.4424657,-0.3440376,17z/data=!4m11!3m10!1s0x480043b503c42f37:0x4124b92d69d85afe!5m2!4m1!1i2!8m2!3d45.4424657!4d-0.3440376!9m1!1b1!16s%2Fg%2F11gyc8krnd?hl=fr" target="_blank" rel="noopener">117 avis Google</a></span></p>
       <div class="avis">
         <figure><figcaption><img loading="lazy" src="img/avis-clementine.jpg" alt=""><span><b>Clémentine</b><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span></span></figcaption><blockquote>«&nbsp;Une vraie petite bulle dans laquelle je me suis sentie si bien&nbsp;!&nbsp;»</blockquote></figure>
         <figure><figcaption><img loading="lazy" src="img/avis-maxime.jpg" alt=""><span><b>Maxime</b><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span></span></figcaption><blockquote>«&nbsp;Un lieu idéal pour partager un moment hors du temps et qui vous permettra une réelle déconnexion du quotidien.&nbsp;»</blockquote></figure>
