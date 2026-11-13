@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bon cadeau de Noël · Une nuit dans la Tiny House invisible · La Maison des Créateurs</title>
+<meta name="description" content="Offrez pour Noël une, deux ou trois nuits dans une tiny house aux façades miroir, cachée dans la forêt à 1h de Bordeaux. Bon cadeau valable un an, pour une ou deux personnes.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Offrez pour Noël une nuit dans une cabane invisible à quelqu'un que vous aimez">
+<meta property="og:description" content="Une tiny house aux façades miroir, cachée dans la forêt. Bon cadeau valable un an, pour une ou deux personnes, à 1h de Bordeaux.">
+<meta property="og:image" content="img/tiny-invisible-miroir-nette.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--sable:#F5E1C8;--creme:#FFFAF4;--brun:#2F221A;--sapin:#354E31;--noel:#D1362A;--jaune:#FBB938;--peche:#F9BCAA;--etoile:#F2A31B}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--sable);color:var(--brun);font-family:"DM Sans",system-ui,sans-serif;font-size:16px;line-height:1.55;padding-bottom:76px}
+img{max-width:100%;display:block}
+br.lg{display:none}
+a{color:inherit}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.affiche{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-weight:900;text-transform:uppercase;color:var(--sapin);letter-spacing:.005em;text-wrap:balance}
+h1{font-size:31px;line-height:1.03}
+h2{font-size:26px;line-height:1.05}
+h3{font-size:19px;line-height:1.2}
+.lead{font-size:17px;line-height:1.55;font-weight:500}
+.fort{font-weight:800;color:var(--sapin)}
+.photo{border:3px solid var(--sapin);border-radius:20px;object-fit:cover;width:100%}
+.ombre-j{box-shadow:7px 7px 0 var(--jaune)}
+.ombre-p{box-shadow:7px 7px 0 var(--peche)}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--noel);color:var(--creme);font-family:Archivo,sans-serif;font-weight:900;font-size:16px;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;border:0;border-radius:999px;padding:16px 30px;cursor:pointer;transition:transform .12s ease,background .12s ease}
+.btn:hover{background:#b92d22;transform:translateY(-1px)}
+.btn:focus-visible,.option:focus-within,summary:focus-visible{outline:3px solid var(--jaune);outline-offset:3px}
+.etoiles{color:var(--etoile);letter-spacing:.06em}
+
+/* Hero */
+.hero{padding:32px 0 40px}
+.hero .wrap{display:flex;flex-direction:column;gap:20px}
+.hero-texte{display:flex;flex-direction:column;gap:18px}
+.etiquette{align-self:flex-start;background:var(--jaune);color:var(--sapin);font-weight:800;font-size:14px;line-height:20px;border-radius:8px;padding:6px 12px}
+.hero .lead{font-size:18px}
+.appel{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding-top:4px}
+.note{font-weight:700;font-size:14px}
+.note .etoiles{font-size:18px;margin-right:6px}
+.hero-photos{position:relative;margin-top:16px;height:330px}
+.hero-photos .grande{position:absolute;left:0;top:0;width:calc(100% - 8px);height:240px;box-shadow:8px 8px 0 var(--jaune)}
+.hero-photos .petite{position:absolute;right:0;top:154px;width:130px;height:160px;border-radius:16px;transform:rotate(4deg)}
+
+/* Deux colonnes */
+.corps{display:flex;flex-direction:column;gap:8px}
+.achat{order:-1;padding-bottom:44px}
+.carte-achat{background:var(--sapin);color:var(--sable);border-radius:24px;padding:26px 18px 24px;display:flex;flex-direction:column;gap:14px}
+.carte-achat .pastille{align-self:flex-start;background:var(--jaune);color:var(--sapin);font-weight:700;font-size:13px;border-radius:999px;padding:4px 12px}
+.carte-achat h2{color:var(--sable);font-size:24px;padding-bottom:4px}
+.option{position:relative;display:flex;align-items:center;gap:12px;border:2px solid rgba(245,225,200,.45);border-radius:14px;padding:14px 16px;cursor:pointer}
+.option input{position:absolute;opacity:0;pointer-events:none}
+.option .rond{width:18px;height:18px;border-radius:50%;border:2px solid var(--sable);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.option .txt{flex:1;display:flex;flex-direction:column}
+.option .nom{font-weight:800;font-size:16px;line-height:22px}
+.option .det{font-weight:500;font-size:13px;line-height:19px}
+.option .prix{font-family:Archivo,sans-serif;font-weight:900;font-size:21px;white-space:nowrap}
+.option.coeur{flex-wrap:wrap;padding-top:12px}
+.option .badge{flex-basis:100%;display:flex}
+.option .badge span{display:inline-flex;align-items:center;gap:6px;background:var(--noel);color:var(--creme);font-family:Archivo,sans-serif;font-weight:900;font-size:12px;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:4px 11px 4px 8px}
+.option:has(input:checked){background:var(--creme);color:var(--brun);border:3px solid var(--noel);box-shadow:5px 5px 0 var(--noel)}
+.option:has(input:checked) .nom,.option:has(input:checked) .prix{color:var(--sapin)}
+.option:has(input:checked) .rond{border-color:var(--noel)}
+.option:has(input:checked) .rond::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--noel)}
+.carte-achat .pour{color:var(--jaune);font-weight:700;font-size:14px}
+.carte-achat .btn{width:100%;font-size:17px}
+.carte-achat .rea{text-align:center;font-size:13px;line-height:20px;font-weight:500}
+
+/* Sections */
+section.bloc{padding:44px 0;border-top:2px solid var(--sapin);display:flex;flex-direction:column;gap:20px}
+section.bloc.premier{border-top:0;padding-top:0}
+.vignettes{display:grid;grid-template-columns:1fr;gap:26px}
+.vignette{display:flex;flex-direction:column;gap:16px}
+.vignette .photo{height:214px;width:calc(100% - 8px)}
+.vignette strong{display:block;font-size:18px}
+.sortie{align-self:flex-start;background:var(--jaune);border-radius:20px;padding:20px 24px;font-size:22px;line-height:1.1}
+.etapes{display:flex;flex-direction:column;gap:20px;list-style:none}
+.etapes li{display:flex;gap:16px;align-items:flex-start}
+.etapes .num{width:44px;height:44px;border-radius:50%;background:var(--sapin);color:var(--sable);font-family:Archivo,sans-serif;font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cabanes{display:grid;grid-template-columns:1fr;gap:36px}
+.cabanes.seule{gap:0}
+.cabane{display:flex;flex-direction:column;gap:12px}
+.cabane .photo{height:250px;width:calc(100% - 8px)}
+.minis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:8px}
+.minis img{height:80px;width:100%;object-fit:cover;border:2px solid var(--sapin);border-radius:12px}
+.lien-avis{color:inherit;font-weight:inherit;text-decoration:underline;text-underline-offset:3px}
+.lien-avis:hover{color:var(--noel)}
+.lien-avis:focus-visible{outline:3px solid var(--jaune);outline-offset:3px}
+.cabane img,.galerie img{cursor:zoom-in}
+.visionneuse{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0;overflow:hidden}
+.visionneuse::backdrop{background:rgba(47,34,26,.92)}
+.visionneuse .scene{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:56px 12px}
+.visionneuse img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:14px;border:3px solid var(--sable)}
+.visionneuse button{position:absolute;width:46px;height:46px;border-radius:50%;border:0;background:var(--sable);color:var(--sapin);font:900 22px/1 Archivo,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.visionneuse button:hover{background:var(--jaune)}
+.visionneuse button:focus-visible{outline:3px solid var(--jaune);outline-offset:3px}
+.visionneuse .fermer{top:10px;right:10px}
+.visionneuse .prec{left:10px;top:50%;transform:translateY(-50%)}
+.visionneuse .suiv{right:10px;top:50%;transform:translateY(-50%)}
+.visionneuse .compte{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:var(--sable);font-weight:700;font-size:14px}
+.cabane ul{padding-left:20px;font-size:15px;line-height:1.7}
+.cabane .acc{font-weight:500}
+.sous{border-top:2px solid var(--sapin);padding-top:14px;font-weight:700;color:var(--sapin);font-size:15px}
+.sur{font-family:Archivo,sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--sapin)}
+.galerie{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.galerie img{height:128px;width:100%;object-fit:cover;border:2px solid var(--sapin);border-radius:14px}
+.histoire .photo{height:230px;width:calc(100% - 8px)}
+.pari{border-left:4px solid var(--jaune);padding:4px 0 4px 16px;display:flex;flex-direction:column;gap:4px}
+.pari .affiche{font-size:19px;line-height:1.3}
+.signature{font-weight:700;font-style:italic;font-size:17px;color:var(--sapin)}
+.infos{display:flex;flex-direction:column;gap:14px}
+.info{display:flex;border:2px solid var(--sapin);border-radius:16px}
+.info .ico{width:72px;flex-shrink:0;border-right:2px solid var(--sapin);display:flex;align-items:center;justify-content:center}
+.info .ico svg{width:36px;height:auto}
+.info div:last-child{padding:16px;display:flex;flex-direction:column;gap:6px}
+.venir{display:flex;flex-direction:column;gap:14px;align-items:center;padding-top:20px}
+.venir h3{font-size:22px;align-self:flex-start}
+.venir img{width:310px;height:auto;flex-shrink:0}
+.venir .txt{display:flex;flex-direction:column;gap:12px;width:100%}
+.noteg{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.noteg b{font-family:Archivo,sans-serif;font-weight:900;font-size:22px;color:var(--sapin)}
+.noteg .etoiles{font-size:20px}
+.noteg span:last-child{font-weight:700;font-size:15px}
+.avis{display:flex;flex-direction:column;gap:14px}
+.avis figure{background:var(--creme);border:2px solid var(--sapin);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.avis figcaption{display:flex;align-items:center;gap:14px}
+.avis figcaption img{width:64px;height:64px;border-radius:50%;border:2px solid var(--sapin);object-fit:cover}
+.avis figcaption b{display:block;font-weight:800;font-size:17px;color:var(--sapin);line-height:1.3}
+.avis figcaption .etoiles{font-size:13px}
+.avis blockquote{font-weight:500;font-size:17px;line-height:1.6}
+.inclus{list-style:none;display:flex;flex-direction:column;gap:14px}
+.inclus li{display:flex;gap:12px;font-weight:500}
+.inclus svg{flex-shrink:0;margin-top:1px}
+details{border-bottom:2px solid var(--sapin)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:14px;padding:16px 0;font-weight:800;color:var(--sapin)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:Archivo,sans-serif;font-weight:900;font-size:22px;line-height:23px;width:16px;text-align:center;flex-shrink:0}
+details[open] summary::after{content:"−"}
+details p{padding:0 0 16px}
+.faq{gap:0!important}
+.faq h2{padding-bottom:12px}
+
+/* Rappel */
+.rappel{padding:0 12px 12px}
+.rappel .panneau{max-width:1200px;margin:0 auto;background:var(--sapin);color:var(--sable);border-radius:24px;padding:36px 22px;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.rappel h2{color:var(--sable);font-size:30px;line-height:1}
+.rappel .lead{font-size:18px}
+.rappel small{color:var(--jaune);font-weight:700;font-size:14px}
+footer{text-align:center;font-size:13px;font-weight:500;padding:22px 20px 14px}
+footer a{text-decoration:underline}
+
+/* Barre mobile */
+.barre{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--creme);border-top:2px solid var(--sapin);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .25s ease}
+.barre.visible{transform:none}
+.barre b{display:block;font-weight:800;font-size:15px;color:var(--sapin);line-height:20px}
+.barre span{font-size:13px;font-weight:500;line-height:18px}
+.barre .btn{font-size:14px;padding:12px 22px;flex-shrink:0}
+
+@media (min-width:640px){
+  .vignettes,.cabanes{grid-template-columns:1fr 1fr}
+  .cabanes.seule{grid-template-columns:1fr}
+  .cabanes.seule .photo{height:420px}
+  .galerie{grid-template-columns:repeat(4,1fr)}
+  .venir{flex-direction:row;gap:32px}
+  .venir h3{align-self:auto}
+  .avis figure{flex-direction:row;align-items:center;gap:22px;padding:22px 26px}
+  .avis figcaption{width:190px;flex-shrink:0}
+  .avis blockquote{font-size:18px}
+  .hero-photos .grande{height:300px}
+  .hero-photos{height:390px}
+  .hero-photos .petite{top:200px;width:150px;height:185px}
+}
+@media (min-width:980px){
+  body{padding-bottom:0}
+  .barre{display:none}
+  h1{font-size:40px;line-height:1.1}
+  br.lg{display:inline}
+  h2{font-size:34px}
+  .hero{padding:64px 0 72px}
+  .hero .wrap{flex-direction:row;align-items:center;gap:48px}
+  .hero-texte{flex:1;display:flex;flex-direction:column;gap:22px;min-width:0}
+  .etiquette{font-size:16px;padding:8px 16px}
+  .hero .lead{font-size:23px;line-height:1.48;max-width:680px}
+  .appel{flex-direction:row;align-items:center;gap:20px}
+  .hero-photos{width:352px;height:400px;flex-shrink:0;margin-top:0}
+  .hero-photos .grande{width:320px;height:340px;box-shadow:10px 10px 0 var(--jaune)}
+  .hero-photos .petite{top:auto;bottom:0;width:150px;height:190px}
+  .corps{flex-direction:row;align-items:flex-start;gap:56px;padding-bottom:80px}
+  .contenu{flex:1;min-width:0}
+  .achat{order:0;width:380px;flex-shrink:0;position:sticky;top:24px;padding-bottom:0}
+  .carte-achat{padding:26px 22px 24px}
+  .carte-achat h2{font-size:25px}
+  section.bloc{padding:48px 0 56px;gap:24px}
+  .lead{font-size:19px}
+  .sortie{font-size:24px}
+  .histoire .photo{height:330px}
+  .info .ico{width:104px}
+  .info .ico svg{width:46px}
+  .info div:last-child{padding:20px 22px}
+  .info p,.venir p{font-size:17px}
+  .rappel{padding:0 20px 0}
+  .rappel .panneau{align-items:center;text-align:center;padding:72px 40px 64px;gap:22px;border-radius:32px}
+  .rappel h2{font-size:54px}
+  .rappel .lead{font-size:21px}
+  footer{padding:28px 20px 32px;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.barre{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-texte">
+      <span class="etiquette">Bon cadeau de Noël · À 1h de Bordeaux</span>
+      <h1>Offrez pour Noël <br class="lg">une nuit dans une cabane invisible <br class="lg">à quelqu'un que vous aimez&nbsp;!</h1>
+      <p class="lead">Une tiny house aux façades miroir, qui disparaît au milieu de la forêt. Le genre de cadeau qu'ils ne s'achèteront jamais tout seuls.</p>
+      <div class="appel">
+        <a class="btn" href="#offrir">Offrir un bon cadeau</a>
+        <span class="note"><span class="etoiles" aria-hidden="true">★★★★★</span>5/5 sur Google · <a class="lien-avis" href="https://www.google.com/maps/place/La+Maison+des+Cr%C3%A9ateurs+:+Location+Chalets+-+S%C3%A9minaires+-+Coworking/@45.4424657,-0.3440376,17z/data=!4m11!3m10!1s0x480043b503c42f37:0x4124b92d69d85afe!5m2!4m1!1i2!8m2!3d45.4424657!4d-0.3440376!9m1!1b1!16s%2Fg%2F11gyc8krnd?hl=fr" target="_blank" rel="noopener">117 avis</a></span>
+      </div>
+    </div>
+    <div class="hero-photos">
+      <img class="photo grande" src="img/tiny-invisible-miroir-nette.jpg" alt="La Tiny House invisible et ses façades miroir, qui reflètent les arbres autour d'elle" width="1300" height="870">
+      <img class="photo petite" src="img/tiny-invisible-facade.jpg" alt="La façade en bois de la tiny house, au milieu des arbres" width="900" height="1200">
+    </div>
+  </div>
+</header>
+
+<div class="wrap corps">
+  <main class="contenu">
+
+    <section class="bloc premier">
+      <h2>Ce que vous leur offrez vraiment</h2>
+      <p class="lead">Aucun programme, aucun horaire. Juste du temps, et un endroit fait pour en profiter.</p>
+      <div class="vignettes">
+        <div class="vignette"><img class="photo ombre-j" loading="lazy" src="img/parc-coucher-de-soleil.jpg" alt="Coucher de soleil rose sur l'étang"><p><strong class="fort">Souffler un grand coup.</strong>Poser les sacs, ranger le téléphone, et n'avoir plus rien à décider jusqu'au lendemain.</p></div>
+        <div class="vignette"><img class="photo ombre-p" loading="lazy" src="img/lever-de-soleil.jpg" alt="Lever de soleil dans la brume sur le parc"><p><strong class="fort">Ralentir.</strong>Un café face à l'étang, un livre sous les arbres, une sieste sans réveil.</p></div>
+        <div class="vignette"><img class="photo ombre-p" loading="lazy" src="img/tiny-invisible-exterieur.jpg" alt="La tiny house et sa terrasse en bois sous les arbres"><p><strong class="fort">Sortir du quotidien.</strong>Dormir dans une cabane qu'on ne voit pas, s'endormir sans un bruit, se réveiller au milieu des arbres.</p></div>
+        <div class="vignette"><img class="photo ombre-j" loading="lazy" src="img/grange-jeux-de-societe.jpg" alt="Une étagère de livres et de jeux de société dans la grange"><p><strong class="fort">Revenir à l'essentiel.</strong>Une marche dans les vignes, une partie de jeu de société dans la grange, une vraie conversation sans écran entre les deux.</p></div>
+      </div>
+      <p class="affiche sortie">Et repartir reposé pour de bon.</p>
+    </section>
+
+    <section class="bloc">
+      <h2>Comment ça marche</h2>
+      <ol class="etapes">
+        <li><span class="num">1</span><p><span class="fort">Vous choisissez le nombre de nuits.</span> Une, deux ou trois. Le paiement en ligne prend deux minutes.</p></li>
+        <li><span class="num">2</span><p><span class="fort">Vous recevez le bon cadeau par mail.</span> À imprimer et à glisser sous le sapin, ou à transférer tel quel.</p></li>
+        <li><span class="num">3</span><p><span class="fort">Ils choisissent leurs dates.</span> Quand ils veulent pendant un an. Nos coordonnées sont sur le bon&nbsp;: ils nous écrivent, et on réserve leur séjour ensemble.</p></li>
+      </ol>
+    </section>
+
+    <section class="bloc">
+      <h2>Où ils vont dormir</h2>
+      <p class="lead">Dans une tiny house de 20&nbsp;m² posée à l'orée de la forêt, dont les façades miroir renvoient les arbres&nbsp;: de loin, on ne la voit pas.</p>
+      <div class="cabanes seule">
+        <article class="cabane">
+          <img class="photo ombre-j" loading="lazy" src="img/tiny-invisible-miroir-nette.jpg" alt="La Tiny House invisible et ses façades miroir, qui reflètent les arbres autour d'elle">
+          <div class="minis"><img loading="lazy" src="img/tiny-invisible-exterieur.jpg" alt="La tiny house et sa terrasse en bois"><img loading="lazy" src="img/tiny-invisible-banquette.jpg" alt="La banquette devant la fenêtre"><img loading="lazy" src="img/tiny-invisible-facade.jpg" alt="La façade en bois de la tiny house"></div>
+          <h3>La Tiny House invisible</h3>
+          <p class="acc">Ils dorment au milieu des arbres, dans une maison que les arbres ont avalée.</p>
+          <ul><li>Des façades miroir qui reflètent la forêt du matin au soir, et qui changent de couleur avec la lumière</li><li>Une vue dégagée sur les vignes, sans un voisin à l'horizon</li><li>Un lit double en mezzanine</li><li>Une banquette devant la grande fenêtre, pour lire ou ne rien faire</li><li>Une terrasse en bois pour prendre le café dehors</li><li>Cuisine équipée et salle de bain privée</li></ul>
+        </article>
+      </div>
+      <p class="sous">20 m² · Pour 1 ou 2 personnes · Draps et serviettes fournis</p>
+    </section>
+
+    <section class="bloc">
+      <h2>Et tout autour, 3 hectares de nature</h2>
+      <p class="sur">La grange</p>
+      <p>Ouverte à tous ceux qui séjournent ici. Un coin du feu, une bibliothèque de BD, de livres et de mangas, des jeux de société, et un filet suspendu pour bouquiner.</p>
+      <div class="galerie"><img loading="lazy" src="img/grange-facade.jpg" alt="La grange en pierre vue de l'extérieur"><img loading="lazy" src="img/grange-filet.jpg" alt="Le filet suspendu au-dessus de la bibliothèque"><img loading="lazy" src="img/grange-salon.jpg" alt="Le salon de la grange et sa fresque colorée"><img loading="lazy" src="img/grange-cuisine.jpg" alt="La cuisine de la grange"></div>
+      <p class="sur" style="padding-top:10px">Le parc</p>
+      <p>Un étang bordé de saules, des vignes à perte de vue, des moutons, et des couchers de soleil qui valent le détour.</p>
+      <div class="galerie"><img loading="lazy" src="img/parc-vu-du-ciel.jpg" alt="Le domaine vu du ciel"><img loading="lazy" src="img/parc-etang.jpg" alt="L'étang bordé de saules"><img loading="lazy" src="img/parc-etang-automne.jpg" alt="L'étang en automne"><img loading="lazy" src="img/parc-petit-pont.jpg" alt="Un petit pont de bois au-dessus de l'eau"></div>
+    </section>
+
+    <section class="bloc histoire">
+      <h2>Pourquoi on a créé cet endroit</h2>
+      <img class="photo ombre-p" loading="lazy" src="img/portrait-killian-laetitia.jpg" alt="Killian et Laëtitia devant la fresque de la grange">
+      <p class="fort" style="font-size:18px;padding-top:8px">Moi c'est Killian, et voici Laëtitia, ma femme.</p>
+      <p>Il y a quelques années, on s'est pris un gros coup sur la tête. On passait nos journées à travailler, et nos soirées suspendus à nos téléphones à essayer de décompresser. Sans jamais se reposer vraiment.</p>
+      <p>Alors on a mis toutes nos économies sur la table pour construire le lieu qu'on aurait rêvé de trouver&nbsp;: un parc de 3 hectares à 1h de Bordeaux, pour déconnecter et se ressourcer dans la nature.</p>
+      <div class="pari"><p>C'était un pari fou, et il a failli ne jamais voir le jour.</p><p class="affiche">15 refus des banques. 2 ans de travaux. Et beaucoup d'enthousiasme&nbsp;!</p></div>
+      <p>Aujourd'hui, plus de 1000 personnes sont déjà venues souffler ici. On serait très heureux d'y accueillir quelqu'un que vous aimez.</p>
+      <p class="signature">Killian et Laëtitia</p>
+    </section>
+
+    <section class="bloc">
+      <h2>Infos pratiques</h2>
+      <div class="infos">
+        <div class="info"><div class="ico"><svg viewBox="0 0 44 52" aria-hidden="true"><path d="M22 49C22 49 4 33 4 20a18 18 0 0 1 36 0c0 13-18 29-18 29Z" fill="none" stroke="#354E31" stroke-width="4" stroke-linejoin="round"/><circle cx="22" cy="20" r="6.5" fill="#354E31"/></svg></div><div><span class="sur">Où&nbsp;?</span><p>À Meux, en Charente-Maritime, au cœur du vignoble de Cognac. À 1h de Bordeaux, 30 minutes de Cognac, 40 minutes de Saintes et d'Angoulême.</p></div></div>
+        <div class="info"><div class="ico"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="9" width="40" height="35" rx="7" fill="none" stroke="#354E31" stroke-width="4"/><path d="M4 20h40M15 3v10M33 3v10" stroke="#354E31" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="32" r="4" fill="#354E31"/></svg></div><div><span class="sur">Quand&nbsp;?</span><p>Toute l'année, selon les disponibilités. Le bon est valable un an.</p></div></div>
+        <div class="info"><div class="ico"><svg viewBox="0 0 54 44" aria-hidden="true"><circle cx="18" cy="12" r="8" fill="none" stroke="#354E31" stroke-width="4"/><circle cx="38" cy="14" r="6.5" fill="none" stroke="#354E31" stroke-width="4"/><path d="M3 42c0-9 6.5-15 15-15s15 6 15 15M35 28c8-1 16 4 16 14" fill="none" stroke="#354E31" stroke-width="4" stroke-linecap="round"/></svg></div><div><span class="sur">Pour qui&nbsp;?</span><p>Une ou deux personnes. Les animaux sont les bienvenus.</p></div></div>
+      </div>
+      <div class="venir">
+        <img loading="lazy" src="img/carte-comment-venir.png" alt="Carte de France : Meux et la gare de Jonzac, entre La Rochelle et Bordeaux, reliés à Paris par le TGV" width="900" height="900">
+        <div class="txt">
+          <h3>Comment venir</h3>
+          <p><span class="fort">En voiture.</span> 1h depuis Bordeaux. Parking sur place.</p>
+          <p><span class="fort">En train.</span> Gare de Jonzac, à 10 minutes. Depuis Paris, un TGV jusqu'à Bordeaux puis un train jusqu'à Jonzac.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bloc">
+      <h2>Ils sont venus souffler ici</h2>
+      <p class="noteg"><b>5/5</b><span class="etoiles" aria-hidden="true">★★★★★</span><span><a class="lien-avis" href="https://www.google.com/maps/place/La+Maison+des+Cr%C3%A9ateurs+:+Location+Chalets+-+S%C3%A9minaires+-+Coworking/@45.4424657,-0.3440376,17z/data=!4m11!3m10!1s0x480043b503c42f37:0x4124b92d69d85afe!5m2!4m1!1i2!8m2!3d45.4424657!4d-0.3440376!9m1!1b1!16s%2Fg%2F11gyc8krnd?hl=fr" target="_blank" rel="noopener">117 avis Google</a></span></p>
+      <div class="avis">
+        <figure><figcaption><img loading="lazy" src="img/avis-clementine.jpg" alt=""><span><b>Clémentine</b><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span></span></figcaption><blockquote>«&nbsp;Une vraie petite bulle dans laquelle je me suis sentie si bien&nbsp;!&nbsp;»</blockquote></figure>
+        <figure><figcaption><img loading="lazy" src="img/avis-maxime.jpg" alt=""><span><b>Maxime</b><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span></span></figcaption><blockquote>«&nbsp;Un lieu idéal pour partager un moment hors du temps et qui vous permettra une réelle déconnexion du quotidien.&nbsp;»</blockquote></figure>
+        <figure><figcaption><img loading="lazy" src="img/avis-harold.jpg" alt=""><span><b>Harold</b><span class="etoiles" aria-label="5 étoiles sur 5">★★★★★</span></span></figcaption><blockquote>«&nbsp;Un lieu incroyable tenu par des gens incroyables. Allez-y les yeux fermés&nbsp;!&nbsp;»</blockquote></figure>
+      </div>
+    </section>
+
+    <section class="bloc">
+      <h2>Ce qui est compris dans le bon</h2>
+      <ul class="inclus">
+        <li><svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true"><path d="M4 12.5l4.5 4.5L18 7.5" fill="none" stroke="#354E31" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Les nuits dans la Tiny House invisible</li>
+        <li><svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true"><path d="M4 12.5l4.5 4.5L18 7.5" fill="none" stroke="#354E31" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Les draps, les serviettes et le ménage</li>
+        <li><svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true"><path d="M4 12.5l4.5 4.5L18 7.5" fill="none" stroke="#354E31" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>L'accès à la grange&nbsp;: le coin du feu, les jeux de société, la bibliothèque de BD, de livres et de mangas</li>
+        <li><svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true"><path d="M4 12.5l4.5 4.5L18 7.5" fill="none" stroke="#354E31" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Les 3 hectares du parc, l'étang et les vignes pour se promener</li>
+        <li><svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true"><path d="M4 12.5l4.5 4.5L18 7.5" fill="none" stroke="#354E31" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Le silence, à volonté</li>
+      </ul>
+    </section>
+
+    <section class="bloc faq">
+      <h2>Questions fréquentes</h2>
+      <details open><summary>Comment est-ce que je reçois le bon cadeau&nbsp;?</summary><p>Par mail, juste après le paiement, en PDF. Vous pouvez l'imprimer pour le glisser sous le sapin ou le transférer tel quel.</p></details>
+      <details><summary>Est-ce que je peux encore commander pour Noël&nbsp;?</summary><p>Oui, jusqu'au 24 décembre au soir&nbsp;: le bon arrive par mail en quelques minutes.</p></details>
+      <details><summary>Combien de temps le bon est-il valable&nbsp;?</summary><p>Un an à partir de la date d'achat. Et si l'année passe trop vite, il suffit de nous écrire&nbsp;: on le prolonge.</p></details>
+      <details><summary>Comment la personne choisit ses dates&nbsp;?</summary><p>Elle nous écrit grâce aux coordonnées indiquées sur le bon, et on regarde ensemble les disponibilités.</p></details>
+      <details><summary>Le bon est valable pour combien de personnes&nbsp;?</summary><p>Une ou deux, au même prix.</p></details>
+      <details><summary>Pourquoi est-elle «&nbsp;invisible&nbsp;»&nbsp;?</summary><p>Ses façades sont recouvertes de miroirs qui reflètent les arbres autour d'elle. De loin, on ne distingue plus que la forêt. De l'intérieur, on voit tout sans être vu.</p></details>
+      <details><summary>Est-ce qu'ils peuvent dormir dans l'autre cabane s'ils préfèrent&nbsp;?</summary><p>Oui. On a aussi une cabane en bois sur le domaine, la Cabane de l'explorateur&nbsp;: au moment de réserver, ils choisissent celle qu'ils préfèrent, au même prix.</p></details>
+      <details><summary>Les repas sont-ils compris&nbsp;?</summary><p>Non. La tiny house a une cuisine équipée, et on partage volontiers nos bonnes adresses autour.</p></details>
+      <details><summary>Et si la personne ne peut finalement pas venir&nbsp;?</summary><p>Le bon n'est pas nominatif&nbsp;: elle peut l'offrir à quelqu'un d'autre.</p></details>
+      <details><summary>Les animaux sont-ils acceptés&nbsp;?</summary><p>Oui, il suffit de nous prévenir au moment de réserver.</p></details>
+      <details><summary>Est-ce que je peux me l'offrir à moi-même&nbsp;?</summary><p>Bien sûr. Seul ou à deux, c'est le même bon.</p></details>
+    </section>
+
+  </main>
+
+  <aside class="achat" id="offrir">
+    <form class="carte-achat" id="carte-achat">
+      <span class="pastille">Bon cadeau de Noël</span>
+      <h2>Combien de nuits voulez-vous offrir&nbsp;?</h2>
+      <label class="option"><input type="radio" name="nuits" value="1"><span class="rond"></span><span class="txt"><span class="nom">1 nuit</span><span class="det">La parenthèse</span></span><span class="prix">120&nbsp;€</span></label>
+      <label class="option coeur"><span class="badge"><span><svg width="14" height="13" viewBox="0 0 16 15" aria-hidden="true"><path d="M8 14.3 1.5 7.9C-.2 6.2-.2 3.4 1.5 1.7c1.7-1.7 4.4-1.7 6.1 0l.4.4.4-.4c1.7-1.7 4.4-1.7 6.1 0 1.7 1.7 1.7 4.5 0 6.2L8 14.3Z" fill="#FFFAF4"/></svg>Le coup de cœur</span></span><input type="radio" name="nuits" value="2" checked><span class="rond"></span><span class="txt"><span class="nom">2 nuits</span><span class="det">Le week-end · soit 100&nbsp;€ la nuit</span></span><span class="prix">200&nbsp;€</span></label>
+      <label class="option"><input type="radio" name="nuits" value="3"><span class="rond"></span><span class="txt"><span class="nom">3 nuits</span><span class="det">La grande respiration · soit 83&nbsp;€ la nuit</span></span><span class="prix">250&nbsp;€</span></label>
+      <p class="pour">Pour 1 ou 2 personnes · Valable 1 an</p>
+      <a class="btn" id="btn-achat" href="#">Offrir 2 nuits</a>
+      <p class="rea">Linge et ménage inclus · Accès à la grange<br>Paiement sécurisé par Stripe</p>
+    </form>
+  </aside>
+</div>
+
+<div class="rappel">
+  <div class="panneau">
+    <h2>Il reste une place sous le sapin.</h2>
+    <p class="lead">Une, deux ou trois nuits dans la tiny house invisible, pour quelqu'un que vous aimez.</p>
+    <a class="btn" href="#offrir">Offrir un bon cadeau</a>
+    <small>À partir de 120&nbsp;€ · Bon reçu par mail · Valable 1&nbsp;an</small>
+  </div>
+</div>
+
+<footer>La Maison des Créateurs · 9 avenue de l'Océan, 17500 Meux · <a href="https://www.maisondescreateurs.fr/mentions-legales">Mentions légales</a> · <a href="https://www.maisondescreateurs.fr/politique-de-confidentialite">Confidentialité</a></footer>
+
+<div class="barre" id="barre">
+  <div><b>Bon cadeau de Noël</b><span>1, 2 ou 3 nuits dans la tiny invisible</span></div>
+  <a class="btn" href="#offrir">Offrir un bon</a>
+</div>
+
+<script>
+// Liens de paiement Stripe, un par formule (à renseigner avant la mise en ligne).
+var LIENS = {
+  1: "https://buy.stripe.com/14A8wI3n03z38KIemz2Ji0b",
+  2: "https://buy.stripe.com/aFa14g9LoedHd0Y0vJ2Ji0c",
+  3: "https://buy.stripe.com/bJe5kw7Dg8Tn8KIcer2Ji0d"
+};
+var bouton = document.getElementById("btn-achat");
+function maj() {
+  var n = document.querySelector('input[name="nuits"]:checked').value;
+  bouton.textContent = "Offrir " + n + (n === "1" ? " nuit" : " nuits");
+  bouton.href = LIENS[n] || "#offrir";
+}
+document.querySelectorAll('input[name="nuits"]').forEach(function (r) { r.addEventListener("change", maj); });
+maj();
+// La barre mobile apparaît quand la carte d'achat sort de l'écran.
+var barre = document.getElementById("barre");
+if ("IntersectionObserver" in window) {
+  new IntersectionObserver(function (e) { barre.classList.toggle("visible", !e[0].isIntersecting); }, { threshold: 0 })
+    .observe(document.getElementById("carte-achat"));
+}
+
+// Agrandir les photos des cabanes, de la grange et du parc au clic.
+(function () {
+  var boite = document.createElement("dialog");
+  boite.className = "visionneuse";
+  boite.setAttribute("aria-label", "Photo agrandie");
+  boite.innerHTML = '<div class="scene"><img alt=""></div>' +
+    '<button type="button" class="fermer" aria-label="Fermer">×</button>' +
+    '<button type="button" class="prec" aria-label="Photo précédente">‹</button>' +
+    '<button type="button" class="suiv" aria-label="Photo suivante">›</button>' +
+    '<p class="compte"></p>';
+  document.body.appendChild(boite);
+  if (!boite.showModal) return;
+  var grande = boite.querySelector("img"), compte = boite.querySelector(".compte");
+  var serie = [], rang = 0;
+  function montrer(i) {
+    rang = (i + serie.length) % serie.length;
+    grande.src = serie[rang].currentSrc || serie[rang].src;
+    grande.alt = serie[rang].alt;
+    compte.textContent = (rang + 1) + " / " + serie.length;
+  }
+  document.querySelectorAll(".cabane, .galerie").forEach(function (groupe) {
+    var photos = Array.prototype.slice.call(groupe.querySelectorAll("img"));
+    photos.forEach(function (img, i) {
+      img.tabIndex = 0;
+      img.setAttribute("role", "button");
+      function ouvrir() { serie = photos; montrer(i); boite.showModal(); }
+      img.addEventListener("click", ouvrir);
+      img.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); ouvrir(); } });
+    });
+  });
+  boite.querySelector(".fermer").addEventListener("click", function () { boite.close(); });
+  boite.querySelector(".prec").addEventListener("click", function () { montrer(rang - 1); });
+  boite.querySelector(".suiv").addEventListener("click", function () { montrer(rang + 1); });
+  boite.addEventListener("click", function (e) { if (e.target === boite || e.target.className === "scene") boite.close(); });
+  boite.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") montrer(rang - 1);
+    if (e.key === "ArrowRight") montrer(rang + 1);
+  });
+  var x0 = null;
+  boite.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  boite.addEventListener("touchend", function (e) {
+    if (x0 === null) return;
+    var d = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(d) > 40) montrer(rang + (d < 0 ? 1 : -1));
+  });
+})();
+</script>
+</body>
+</html>
