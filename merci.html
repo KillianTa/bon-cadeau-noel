@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="fr">
 <head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1143762474698691');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1143762474698691&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Merci ! Votre bon cadeau · La Maison des Créateurs</title>
@@ -127,6 +144,21 @@ var d = new Date(); d.setFullYear(d.getFullYear() + 1);
 document.getElementById("validite").textContent = d.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
 var ref = (q.get("ref") || "").replace(/[^A-Za-z0-9_]/g, "");
 if (ref) document.getElementById("ref").textContent = "Référence du paiement : " + ref.slice(-12).toUpperCase();
+</script>
+<script>
+// Signale l'achat au pixel Meta, une seule fois par paiement.
+(function () {
+  var q = new URLSearchParams(location.search);
+  var prix = { "1": 120, "2": 200, "3": 250 };
+  var n = q.get("n");
+  var ref = (q.get("ref") || "").replace(/[^A-Za-z0-9_]/g, "");
+  if (!prix[n] || !ref || !window.fbq) return;
+  var cle = "mdc_achat_" + ref;
+  try { if (localStorage.getItem(cle)) return; localStorage.setItem(cle, "1"); } catch (e) {}
+  fbq("track", "Purchase",
+    { value: prix[n], currency: "EUR", content_name: "Bon cadeau " + n + " nuit(s)" },
+    { eventID: "purchase_" + ref });
+})();
 </script>
 </body>
 </html>
